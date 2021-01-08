@@ -17,3 +17,6 @@ def test_three():
 class TestFixture:
     def test_select(self, conDb):
         print("测试scope")
+
+    def test_err(self):
+        assert 1 == 2
