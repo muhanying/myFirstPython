@@ -1,0 +1,6 @@
+#官网下载allure插件https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.8/
+#解压后，将bin配置到环境变量
+#安装pytest-allure库，pip install allure-pytest
+#执行用例pytest <测试目录> --alluredir <测试结果存放目录>
+#美化报告 allure generate <测试结果存放目录> -o <测试报告存放目录> --clean
+#查看报告：1、可直接把index.html用浏览器打开  2、allure open <测试报告存放目录>
