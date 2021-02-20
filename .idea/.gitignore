@@ -1,7 +1,12 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+<<<<<<< HEAD
 /venv/
 /.idea/
 tmp
 cookie.json
+=======
+.idea
+venv/
+>>>>>>> f813b3ba64b1067f19923cc4e50ec67f36776c21
