@@ -4,9 +4,6 @@ from appium_test.commons.base import BasePage
 
 
 class TestDemo:
-    def test_one(self):
-        print(111)
-
     def setup(self):
         self.base = BasePage()
 
