@@ -21,7 +21,7 @@ class TestDemo:
         self.base.find_and_click((MobileBy.XPATH, "//*[@text='女']"))
         self.base.find_and_sendkey((MobileBy.ID, "com.tencent.wework:id/fwi"), "18721901111")
         self.base.find_and_click((MobileBy.ID, "com.tencent.wework:id/aj_"))
-        toast = self.base.find_and_gettext((MobileBy.XPATH, '//*[@class="android.widget.Toast"]'))
+        toast = self.base.find_and_gettext((MobileBy.XPATH, "//*[@class='android.widget.Toast'']"))
         assert toast == '添加成功'
 
     def teardown(self):

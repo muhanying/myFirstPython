@@ -12,6 +12,7 @@ class BasePage:
             caps["appPackage"] = "com.tencent.wework"
             caps["appActivity"] = ".launch.LaunchSplashActivity"
             caps["noReset"] = "true"
+            caps['settings[waitForIdleTimeout]'] = 1
 
             self._driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
             self._driver.implicitly_wait(5)
