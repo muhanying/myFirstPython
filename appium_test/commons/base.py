@@ -1,13 +1,11 @@
 from appium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
     def __init__(self, driver: WebDriver = None):
         if driver is None:
-            caps = {}
+            caps = dict()
             caps["platformName"] = "android"
             caps["appPackage"] = "com.tencent.wework"
             caps["appActivity"] = ".launch.LaunchSplashActivity"
