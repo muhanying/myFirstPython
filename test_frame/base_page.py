@@ -1,6 +1,7 @@
 from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
+import yaml
 
 
 class BasePage:
@@ -8,7 +9,9 @@ class BasePage:
         self._driver = driver
 
     def find_ele(self, by, locator=None):
-        black_list = [(By.ID, "com.xueqiu.android:id/action_close")]
+        with open("./black_list.yaml") as f:
+            black_list = yaml.load(f)
+        # black_list = [(By.ID, "com.xueqiu.android:id/action_close")]
         try:
             if locator is None:
                 result = self._driver.find_element(*by)
@@ -39,4 +42,14 @@ class BasePage:
                              'scrollIntoView(new UiSelector().'
                              f'text("{text}").instance(0));'))
 
+    def to_steps(self, t_path, option):
+        with open(t_path, 'r', encoding="utf-8") as f:
+            data = yaml.load(f)
+        steps = data[option]
+
+        for step in steps:
+            if step["action"] == "find_and_click":
+                self.find_and_click(step["locator"])
+            elif step["action"] == "find_and_send_keys":
+                self.find_and_send_keys(step["locator"], step["content"])
 
